@@ -1,20 +1,18 @@
-import { BrowserRouter as Router } from "react-router-dom";
-import Routers from "./routers";
+import { RouterProvider } from "react-router-dom";
 import { SnackbarProvider } from "notistack";
+import router from "./routers/router";
 
 function App() {
   return (
-    <SnackbarProvider 
+    <SnackbarProvider
       autoHideDuration={3000}
       maxSnack={3}
       anchorOrigin={{
-        vertical: 'top',
-        horizontal: 'right',
+        vertical: "top",
+        horizontal: "right",
       }}
     >
-      <Router>
-        <Routers />
-      </Router>
+      <RouterProvider router={router} />
     </SnackbarProvider>
   );
 }

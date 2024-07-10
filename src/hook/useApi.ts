@@ -60,7 +60,7 @@ const useApi = () => {
                 return data.message
             } else {
                 enqueueSnackbar(data.message, { variant: "success" });
-                navigate('/home')
+                navigate('/')
                 return data.message
             }
 

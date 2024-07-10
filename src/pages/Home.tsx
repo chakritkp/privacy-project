@@ -20,6 +20,7 @@ import DeleteSweepIcon from "@mui/icons-material/DeleteSweep";
 
 import { useEffect, useState } from "react";
 import useApi from "../hook/useApi";
+import { Outlet } from "react-router-dom";
 
 const Home = () => {
   const [list, setList] = useState<any>({});
@@ -101,15 +102,11 @@ const Home = () => {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          justifyContent: 'space-between'
+          justifyContent: "space-between",
         }}
       >
         <Typography variant="h2">User</Typography>
-        <Button
-          onClick={() => useLogout()}
-          variant="contained"
-          color="error"
-        >
+        <Button onClick={() => useLogout()} variant="contained" color="error">
           Logout
         </Button>
       </Box>
