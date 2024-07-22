@@ -5,7 +5,7 @@ import { Box, CardContent, CardMedia, Typography } from "@mui/material";
 interface itemPropsType {
   data: {
     img: Array<string>;
-    name: string;
+    product_name: string;
     price: number;
   };
 }
@@ -18,7 +18,7 @@ const CardComponent: React.FC<itemPropsType> = ({ data }) => {
         component="img"
         height="250"
         image={data?.img[0]}
-        alt={data?.name}
+        alt={data?.product_name}
       />
       <CardContent>
         <Box
@@ -29,7 +29,7 @@ const CardComponent: React.FC<itemPropsType> = ({ data }) => {
           }}
         >
           <Typography gutterBottom variant="h5" component="div">
-            {data?.name}
+            {data?.product_name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Price: {data?.price}

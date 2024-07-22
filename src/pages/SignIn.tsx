@@ -16,7 +16,7 @@ import * as yup from "yup";
 import { Controller, useForm } from "react-hook-form";
 import useApi from "../hook/useApi";
 import { useNavigate } from "react-router-dom";
-import Loader from "../component/loader";
+import Loader from "../component/Loader";
 
 type SignInProps = {};
 

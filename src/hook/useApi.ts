@@ -1,20 +1,17 @@
-import axios from "axios"
 import { enqueueSnackbar } from "notistack";
 import { useNavigate } from "react-router-dom";
 import { filterType } from "../pages/Productlist";
+import axiosInstance from "../utils/axiosInstance";
 
-const userServices = axios.create({
-    baseURL: "http://localhost:3000/api-services" || import.meta.env.VITE_USER_SERVICES_URL,
-    withCredentials: true
-});
 
 const useApi = () => {
+
     const navigate = useNavigate();
 
     const useGetUser = async () => {
         try {
 
-            const { data } = await userServices.get('/users')
+            const { data } = await axiosInstance.get('/users')
 
             return data
         } catch (error: any) {
@@ -25,7 +22,7 @@ const useApi = () => {
     const useGetRole = async () => {
         try {
 
-            const { data } = await userServices.get('/roles')
+            const { data } = await axiosInstance.get('/roles')
 
             return data
         } catch (error: any) {
@@ -53,7 +50,7 @@ const useApi = () => {
                 throw new Error("Invalid username format. Must be either a valid email or phone number.");
             }
 
-            const { data } = await userServices.post('/user-login-services', {}, { headers });
+            const { data } = await axiosInstance.post('/user-login-services', {}, { headers });
 
             if (!data) {
                 console.error('Signing failed')
@@ -81,7 +78,7 @@ const useApi = () => {
                 'phone_number': phone_number,
             }
 
-            const { data } = await userServices.post('/user-register-services', {}, { headers })
+            const { data } = await axiosInstance.post('/user-register-services', {}, { headers })
 
             if (!data) {
                 console.error('Signup failed')
@@ -101,7 +98,7 @@ const useApi = () => {
 
     const useLogout = async () => {
         try {
-            const { data } = await userServices.post('/user-logout-services');
+            const { data } = await axiosInstance.post('/user-logout-services');
             if (!data) {
                 console.error('Signup failed')
                 return data.message
@@ -117,7 +114,7 @@ const useApi = () => {
 
     const useGetProducts = async (filter: filterType) => {
         try {
-            const { data } = await userServices.get('/products', {
+            const { data } = await axiosInstance.get('/products', {
                 params: { ...filter }
             });
 
@@ -126,6 +123,8 @@ const useApi = () => {
             console.error('Error during sign in:', error.message);
         }
     }
+
+
 
     return { useGetUser, useGetProducts, useGetRole, useSignIn, useSignUp, useLogout }
 }

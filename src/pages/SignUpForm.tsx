@@ -13,7 +13,7 @@ import { Controller, useForm } from "react-hook-form";
 import useApi from "../hook/useApi";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Loader from "../component/loader";
+import Loader from "../component/Loader";
 
 const SignUpForm = () => {
   const { useSignUp } = useApi();
@@ -63,7 +63,7 @@ const SignUpForm = () => {
 
   return (
     <Container component="main" maxWidth="xs">
-      <Loader open={open} handleClose={() => setOpen(true)} />
+      <Loader open={open} onClose={() => setOpen(true)} />
       <form onSubmit={handleSubmit(handleSave)} method="post">
         <Box
           sx={{

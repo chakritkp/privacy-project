@@ -19,10 +19,10 @@ import EditIcon from "@mui/icons-material/Edit";
 import DeleteSweepIcon from "@mui/icons-material/DeleteSweep";
 
 import { useEffect, useState } from "react";
-import useApi from "../hook/useApi";
+import useApi from "../../../hook/useApi";
 import { Outlet } from "react-router-dom";
 
-const Home = () => {
+const AdminList = () => {
   const [list, setList] = useState<any>({});
   const [disabled, setDisabled] = useState<any>(true);
   const [roleOptions, setRoleOptions] = useState<any>({});
@@ -116,7 +116,7 @@ const Home = () => {
           size="small"
         >
           <TableHead>
-            <TableRow>
+            <TableRow key={1}>
               {columns?.map((col: any) => (
                 <TableCell id={col?.id} align={col?.align}>
                   {col?.name}
@@ -142,4 +142,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default AdminList;
