@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import {
-  Box,
   Collapse,
   IconButton,
   List,
@@ -18,11 +17,9 @@ import ExpandLess from "@mui/icons-material/ExpandLess";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import routers from "../../../routers/routers.ts";
 
-type Props = {};
-
-const AdminMenuList = (props: Props) => {
+const AdminMenuList: React.FC = () => {
   const theme = useTheme();
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [productsMenuMore, setProductsMenuMore] = useState(false);
   const navigate = useNavigate();
   const toggleSidebar = () => {

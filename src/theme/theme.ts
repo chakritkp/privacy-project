@@ -32,11 +32,11 @@ const lightTheme = createTheme({
         },
         body1: {
             fontWeight: 400,
-            color: "#4A4A4A",
+            color: "#F2FCFC",
         },
         body2: {
             fontWeight: 400,
-            color: "#4A4A4A",
+            color: "#F2FCFC",
         },
         caption: {
             fontWeight: 400,
@@ -67,7 +67,7 @@ const lightTheme = createTheme({
         },
         background: {
             default: "#8FBAF3",
-            paper: "#0245A3",
+            paper: "#008DDA",
         },
         text: {
             primary: "#4A4A4A",

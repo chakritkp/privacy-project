@@ -1,7 +1,7 @@
 import axios from "axios"
 
 const axiosInstance = axios.create({
-    baseURL: "http://localhost:3000/api-services" || import.meta.env.VITE_USER_SERVICES_URL,
+    baseURL: import.meta.env.VITE_USER_SERVICES_URL || "http://localhost:8080",
     withCredentials: true
 });
 

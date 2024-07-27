@@ -59,7 +59,9 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <AppBar
       position="sticky"
-      sx={{ backgroundColor: theme.palette.background.paper }}
+      sx={{
+        backgroundColor: theme.palette.background.paper,
+      }}
     >
       <Container>
         <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>

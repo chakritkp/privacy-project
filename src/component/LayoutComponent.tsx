@@ -1,4 +1,4 @@
-import { useTheme } from "@mui/material";
+import { Container, Stack, useTheme } from "@mui/material";
 import React, { ReactNode } from "react";
 import Navbar from "./Navbar/Navbar";
 import { Outlet } from "react-router-dom";
@@ -13,10 +13,14 @@ const LayoutComponent: React.FC<LayoutComponentProps> = () => {
         backgroundColor: theme.palette.background.default,
         width: "100vw",
         minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
       }}
     >
       <Navbar />
-      <Outlet />
+      <Container component="main" maxWidth="lg" sx={{ paddingTop: "32px" }}>
+        <Outlet />
+      </Container>
     </div>
   );
 };

@@ -13,15 +13,16 @@ const LoaderPage = React.lazy(() => import("../component/Loader.tsx"));
 
 const Sample = React.lazy(() => import("../pages/Sample"));
 const ProductList = React.lazy(() => import("../pages/Productlist"));
+const ProductById = React.lazy(() => import("../pages/ProductById.tsx"));
 
 const AdminMenuList = React.lazy(
-  () => import("../pages/Admin/component/AdminMenuList.tsx")
+  () => import("../pages/backoffice/component/AdminMenuList.tsx")
 );
 const AdminProductList = React.lazy(
-  () => import("../pages/Admin/Products/Products")
+  () => import("../pages/backoffice/Products/Products.tsx")
 );
 const AdminProductsForm = React.lazy(
-  () => import("../pages/Admin/Products/ProductsForm")
+  () => import("../pages/backoffice/Products/ProductsForm.tsx")
 );
 
 const AppRouters: React.FC = () => {
@@ -39,6 +40,7 @@ const AppRouters: React.FC = () => {
           >
             <Route index element={<Sample />} />
             <Route path="collections" element={<ProductList />} />
+            <Route path="collections/:id" element={<ProductById />} />
           </Route>
           <Route path="admin" element={<AdminMenuList />}>
             <Route index element={<>Hello</>} />

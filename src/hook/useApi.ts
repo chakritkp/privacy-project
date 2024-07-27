@@ -114,7 +114,7 @@ const useApi = () => {
 
     const useGetProducts = async (filter: filterType) => {
         try {
-            const { data } = await axiosInstance.get('/products', {
+            const { data } = await axiosInstance.get('/api-guest-services/products', {
                 params: { ...filter }
             });
 
